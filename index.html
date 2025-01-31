@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Dog Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            border: 2px solid #4CAF50;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Dog Facts</h1>
+        <p id="fact"></p>
+        <button id="newFactButton">Get a New Fact</button>
+    </div>
+    <script>
+        const dogFacts = [
+            {
+                fact: "Domestication",
+                description: "Dogs were domesticated from wolves around 20,000 to 40,000 years ago, making them one of the first domesticated animals."
+            },
+            {
+                fact: "Sense of Smell",
+                description: "A dog's sense of smell is estimated to be between 10,000 to 100,000 times more sensitive than that of humans, allowing them to detect scents at incredibly low concentrations."
+            },
+            {
+                fact: "Hearing Ability",
+                description: "Dogs can hear sounds at frequencies as high as 65,000 Hz, while humans can typically hear up to 20,000 Hz. This allows them to hear sounds that are inaudible to us."
+            },
+            {
+                fact: "Variety of Breeds",
+                description: "There are over 340 different dog breeds recognized worldwide, each with unique characteristics and traits."
+            },
+            {
+                fact: "Social Animals",
+                description: "Dogs are pack animals and thrive on social interaction, both with humans and other dogs. They are known for their loyalty and companionship."
+            },
+            {
+                fact: "Communication",
+                description: "Dogs communicate through a combination of vocalizations (barking, growling), body language (tail wagging, ear position), and facial expressions."
+            },
+            {
+                fact: "Lifespan",
+                description: "The average lifespan of a dog varies by breed, but it typically ranges from 10 to 15 years. Smaller breeds tend to live longer than larger breeds."
+            },
+            {
+                fact: "Intelligence",
+                description: "Dogs are highly intelligent animals and can learn a variety of commands and tricks. Some breeds, like Border Collies and Poodles, are known for their exceptional problem-solving abilities."
+            },
+            {
+                fact: "Emotional Sensitivity",
+                description: "Dogs can sense human emotions and often respond to their owner's feelings. They can provide comfort and companionship during times of stress or sadness."
+            },
+            {
+                fact: "Unique Nose Prints",
+                description: "Just like human fingerprints, each dog's nose print is unique. This means that a dog's nose can be used to identify them, similar to how we use fingerprints for identification."
+            }
+        ];
+
+        document.getElementById('newFactButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * dogFacts.length);
+            const randomFact = dogFacts[randomIndex];
+            document.getElementById('fact').innerText = `${randomFact.fact}: ${randomFact.description}`;
+        });
+    </script>
+</body>
+</html>
